@@ -95,6 +95,102 @@ public class CalculatorTest {
         // Assert
         assertEquals(expectedResult, result);
     }
+
+    @Test
+    void checkIfFiveMinusThreeEqualsToTwo() {
+        int firstOperand = 5;
+        int secondOperand = 3;
+        int expected=2;
+        int result= new Calculator().subtract(firstOperand, secondOperand);
+        assertEquals(expected, result);
+    }
+    @Test
+    void checkIfNegativeFiveMinusNegativeFiveEqualsToNegativeZero(){
+        int firstOperand = -5;
+        int secondOperand = -5;
+        int expected=0;
+        int result= new Calculator().subtract(firstOperand, secondOperand);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void checkIfFiveMinusNegativeFiveEqualsToTen(){
+        int firstOperand = 5;
+        int secondOperand = -5;
+        int expected=10;
+        int result= new Calculator().subtract(firstOperand, secondOperand);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void checkIfTenDividedByTwoEqualsToFive() {
+        int firstOperand = 10;
+        int secondOperand = 2;
+        int expected=5;
+        int result= new Calculator().divide(firstOperand, secondOperand);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void checkIfTenDividedByNegativeFiveEqualsToNegativeTwo(){
+        int firstOperand = 10;
+        int secondOperand = -5;
+        int expected=-2;
+        int result= new Calculator().divide(firstOperand, secondOperand);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void checkIfNegativeTenDividedByNegativeFiveEqualsToTwo(){
+        int firstOperand = -10;
+        int secondOperand = -5;
+        int expected=2;
+        int result= new Calculator().divide(firstOperand, secondOperand);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void checkIfFiveTimesFiveEqualsTo25() {
+        int firstOperand = 5;
+        int secondOperand = 5;
+        int expected=25;
+        int result= new Calculator().multiply(firstOperand, secondOperand);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void checkIfFiveTimesNegativeFiveEqualsToNegative25() {
+        int firstOperand = 5;
+        int secondOperand = -5;
+        int expected=-25;
+        int result= new Calculator().multiply(firstOperand, secondOperand);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void checkIfFiveTimesZeroEqualsToZero() {
+        int firstOperand = 5;
+        int secondOperand = 0;
+        int expected=0;
+        int result= new Calculator().multiply(firstOperand, secondOperand);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void checkIfFactorialZeroEqualsToOne() {
+        int firstOperand=0;
+        int expected=1;
+        int result=new Calculator().factorial(firstOperand);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void checkIfFactorial5EqualsTo20() {
+        int firstOperand=5;
+        int expected=20;
+        int result=new Calculator().factorial(firstOperand);
+        assertEquals(expected, result);
+    }
 }
 
 

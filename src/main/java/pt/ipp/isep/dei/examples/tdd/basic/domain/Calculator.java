@@ -18,18 +18,24 @@ public class Calculator {
     }
 
     public int subtract(int firstOperand, int secondOperand) {
-        throw new UnsupportedOperationException();
+         return (firstOperand)-(secondOperand);
     }
 
     public int divide(int dividend, int divisor) {
-        throw new UnsupportedOperationException();
+        return (dividend/divisor);
     }
 
     public int multiply(int firstOperand, int secondOperand) {
-        throw new UnsupportedOperationException();
+        return (firstOperand*secondOperand);
     }
 
     public int factorial(int firstOperand) {
-        throw new UnsupportedOperationException();
+        int total=0;
+        if (firstOperand == 0) return 1;
+
+        for (int i=1; i<firstOperand; i++){
+            total=i*(i+1);
+        }
+        return total;
     }
 }

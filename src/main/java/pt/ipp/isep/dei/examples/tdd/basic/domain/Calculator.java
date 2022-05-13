@@ -22,6 +22,7 @@ public class Calculator {
     }
 
     public int divide(int dividend, int divisor) {
+        if (divisor == 0) throw new IllegalArgumentException();
         return (dividend/divisor);
     }
 
@@ -31,7 +32,7 @@ public class Calculator {
 
     public int factorial(int firstOperand) {
         int total=0;
-        if (firstOperand == 0) return 1;
+        if (firstOperand == 0 || firstOperand < 0) return 1;
 
         for (int i=1; i<firstOperand; i++){
             total=i*(i+1);

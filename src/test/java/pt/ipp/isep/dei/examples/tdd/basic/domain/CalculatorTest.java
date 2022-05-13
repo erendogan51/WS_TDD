@@ -2,8 +2,7 @@ package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
 import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTest {
 
@@ -150,6 +149,15 @@ public class CalculatorTest {
     }
 
     @Test
+    void checkIfExceptionIsThrownWhenDivisorIsZero(){
+        int firstOperand = -10;
+        int secondOperand = 0;
+        assertThrows(IllegalArgumentException.class, () ->{
+            new Calculator().divide(firstOperand, secondOperand);
+                });
+    }
+
+    @Test
     void checkIfFiveTimesFiveEqualsTo25() {
         int firstOperand = 5;
         int secondOperand = 5;
@@ -188,6 +196,14 @@ public class CalculatorTest {
     void checkIfFactorial5EqualsTo20() {
         int firstOperand=5;
         int expected=20;
+        int result=new Calculator().factorial(firstOperand);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void checkIfOneIsReturnedWhenInputIsNegative(){
+        int firstOperand=-5;
+        int expected=1;
         int result=new Calculator().factorial(firstOperand);
         assertEquals(expected, result);
     }
